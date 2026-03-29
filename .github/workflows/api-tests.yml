@@ -21,7 +21,7 @@ jobs:
       uses: actions/setup-python@v6
       with:
         python-version: '3.12'
-        cache: 'pip' # caching pip dependencies for faster runs
+        cache: 'pip'
 
     - name: Install dependencies
       run: |
@@ -31,10 +31,16 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
+    - name: Create Reports Directory
+      run: mkdir -p reports
+
     - name: Run API Tests
       run: |
         pytest -v --html=reports/report.html --self-contained-html
-      # We use fixed report name for CI to make uploading easier
+
+    - name: List Report Directory (Debug)
+      if: always()
+      run: ls -R reports/
 
     - name: Upload Test Report
       if: always() # Run even if tests fail
