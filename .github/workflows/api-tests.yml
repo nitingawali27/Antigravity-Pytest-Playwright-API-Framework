@@ -1,0 +1,43 @@
+name: API Automation Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-level: '3.12'
+        cache: 'pip' # caching pip dependencies for faster runs
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: Run API Tests
+      run: |
+        pytest -v --html=reports/report.html --self-contained-html
+      # We use fixed report name for CI to make uploading easier
+
+    - name: Upload Test Report
+      if: always() # Run even if tests fail
+      uses: actions/upload-artifact@v4
+      with:
+        name: api-test-report
+        path: reports/report.html
+        retention-days: 30
