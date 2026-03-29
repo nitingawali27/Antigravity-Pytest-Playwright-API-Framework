@@ -36,9 +36,14 @@ def pytest_configure(config):
     if not os.path.exists(report_dir):
         os.makedirs(report_dir, exist_ok=True)
 
-    # Generate timestamp: YYYYMMDD_HHMMSS
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    report_name = os.path.join(report_dir, f"report_{timestamp}.html")
+    # Dynamic or Fixed Reporting?
+    if os.getenv("GITHUB_ACTIONS") == "true":
+        # In CI (GitHub Actions), use a FIXED name for the artifact uploader
+        report_name = os.path.join(report_dir, "report.html")
+    else:
+        # Locally, use a UNIQUE timestamp so you have a history of reports
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        report_name = os.path.join(report_dir, f"report_{timestamp}.html")
 
     # Apply the report path to pytest-html
     config.option.htmlpath = report_name
