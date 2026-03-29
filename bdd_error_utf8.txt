@@ -1,0 +1,33 @@
+﻿
+[REPORT] Saved to: D:\Learn_AntiGravity\api_automation\reports\report_20260330_000651.html
+============================= test session starts =============================
+platform win32 -- Python 3.12.6, pytest-7.4.3, pluggy-1.5.0 -- C:\Users\nitin.gawali\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.6', 'Platform': 'Windows-11-10.0.26200-SP0', 'Packages': {'pytest': '7.4.3', 'pluggy': '1.5.0'}, 'Plugins': {'allure-pytest': '2.13.5', 'base-url': '2.1.0', 'dependency': '0.6.1', 'html': '4.1.1', 'metadata': '3.1.1', 'playwright': '0.7.1', 'timeout': '2.2.0', 'xdist': '3.5.0'}, 'JAVA_HOME': 'C:\\Program Files\\Java\\jdk-21', 'Base URL': ''}
+rootdir: D:\Learn_AntiGravity\api_automation
+configfile: pytest.ini
+plugins: allure-pytest-2.13.5, base-url-2.1.0, dependency-0.6.1, html-4.1.1, metadata-3.1.1, playwright-0.7.1, timeout-2.2.0, xdist-3.5.0
+collecting ... collected 0 items / 1 error
+
+=================================== ERRORS ====================================
+_____________ ERROR collecting tests/step_defs/test_crud_steps.py _____________
+ImportError while importing test module 'D:\Learn_AntiGravity\api_automation\tests\step_defs\test_crud_steps.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\nitin.gawali\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests\step_defs\test_crud_steps.py:16: in <module>
+    from pytest_bdd import scenarios, given, when, then, parsers
+E   ModuleNotFoundError: No module named 'pytest_bdd'
+============================== warnings summary ===============================
+C:\Users\nitin.gawali\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\config\__init__.py:1373
+  C:\Users\nitin.gawali\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\config\__init__.py:1373: PytestConfigWarning: Unknown config option: bdd_features_base_dir
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- Generated html report: file:///D:/Learn_AntiGravity/api_automation/reports/report_20260330_000651.html -
+=========================== short test summary info ===========================
+ERROR tests/step_defs/test_crud_steps.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+========================= 1 warning, 1 error in 0.21s =========================

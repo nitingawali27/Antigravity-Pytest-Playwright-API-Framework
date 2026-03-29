@@ -1,0 +1,11 @@
+
+# ============================================================
+# requirements.txt
+# This file lists all Python packages needed for this project.
+# Run: pip install -r requirements.txt
+# ============================================================
+
+playwright==1.43.0          # Used for making API (HTTP) requests
+pytest==8.2.0               # Test runner - runs all our tests
+pytest-bdd==7.1.2           # Allows writing tests in plain English (BDD style)
+pytest-html==4.1.1          # Generates an HTML report after test run

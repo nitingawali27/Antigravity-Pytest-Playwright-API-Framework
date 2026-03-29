@@ -1,0 +1,37 @@
+﻿pytest : C:\Users\nitin.gawali\AppData\Local\Prog
+rams\Python\Python312\Lib\site-packages\_pytest\c
+onfig\__init__.py:331: 
+PluggyTeardownRaisedWarning: A plugin raised an 
+exception during an old-style hookwrapper 
+teardown.
+At line:1 char:1
++ pytest -p no:html -k "Create" -s --tb=long > 
+debug_collection_error.t ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\ 
+   Users\nitin....apper teardown.:String) [], R  
+  emoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Plugin: helpconfig, Hook: pytest_cmdline_parse
+UsageError: usage: pytest [options] 
+[file_or_dir] [file_or_dir] [...]
+pytest: error: unrecognized arguments: 
+--self-contained-html
+  inifile: 
+D:\Learn_AntiGravity\api_automation\pytest.ini
+  rootdir: D:\Learn_AntiGravity\api_automation
+For more information see https://pluggy.readthedo
+cs.io/en/stable/api_reference.html#pluggy.PluggyT
+eardownRaisedWarning
+  config = 
+pluginmanager.hook.pytest_cmdline_parse(
+ERROR: usage: pytest [options] [file_or_dir] 
+[file_or_dir] [...]
+pytest: error: unrecognized arguments: 
+--self-contained-html
+  inifile: 
+D:\Learn_AntiGravity\api_automation\pytest.ini
+  rootdir: D:\Learn_AntiGravity\api_automation
+

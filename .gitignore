@@ -1,0 +1,58 @@
+# ============================================================
+# .gitignore
+#
+# PURPOSE: Tells Git which files and folders it should IGNORE.
+# We don't want to push your virtual environment, test caches,
+# or local reports to GitHub.
+# ============================================================
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.installed.cfg
+*.egg-info/
+.eggs/
+
+# --- Virtual Environments (Crucial to ignore!) ---
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Playwright ---
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# --- Project Specific (Reports) ---
+api_automation/reports/
+api_automation/test_output.txt
+api_automation/debug_output.txt
+api_automation/test_error_utf8.txt
+api_automation/bdd_error_utf8.txt
+api_automation/debug_collection_error.txt
+api_automation/debug_error_utf8.txt
+api_automation/bdd_error.txt
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+
+# --- Secrets (Never push these!) ---
+.env
+*.pem
+*.key
